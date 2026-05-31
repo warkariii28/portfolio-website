@@ -1,62 +1,185 @@
 <section id="projects" class="reveal">
-  <div class="container">
-    <span class="section-eyebrow"> Portfolio </span>
 
-    <h2 class="section-title">Featured Projects</h2>
+  <div class="container">
+
+    <span class="section-eyebrow">
+      Portfolio
+    </span>
+
+    <h2 class="section-title">
+      Featured Projects
+    </h2>
 
     <div class="section-divider"></div>
 
+    <!-- Featured Project -->
+
+    @if(featuredProject){
+
+    <div class="featured-project card-dark">
+
+      <div class="featured-label">
+        Featured Project
+      </div>
+
+      <div class="d-flex justify-content-between align-items-start flex-wrap">
+
+        <div>
+
+          <h3 class="featured-title">
+            {{ featuredProject.title }}
+          </h3>
+
+          <div class="project-year">
+            {{ featuredProject.year }}
+          </div>
+
+        </div>
+
+        @if(featuredProject.badge){
+
+        <span [class]="getBadgeClass(featuredProject.badge)">
+          {{ featuredProject.badge }}
+        </span>
+
+        }
+
+      </div>
+
+      <p class="featured-description">
+        {{ featuredProject.description }}
+      </p>
+
+      <div class="featured-tech">
+
+        @for(tech of featuredProject.techStack; track tech){
+
+        <span class="tech-badge">
+          {{ tech }}
+        </span>
+
+        }
+
+      </div>
+
+      <ul class="project-highlights">
+
+        @for(point of featuredProject.highlights; track point){
+
+        <li>
+          {{ point }}
+        </li>
+
+        }
+
+      </ul>
+
+      <div class="featured-actions">
+
+        <a
+          [href]="featuredProject.githubUrl"
+          target="_blank"
+          class="btn-outline">
+
+          <i class="fab fa-github"></i>
+          GitHub
+
+        </a>
+
+      </div>
+
+    </div>
+
+    }
+
+    <!-- Other Projects -->
+
+    <h3 class="other-projects-title">
+      Other Projects
+    </h3>
+
     <div class="row g-4">
-      @for (project of projects; track project.id) {
-        <div class="col-lg-6">
-          <div class="card-dark project-card h-100">
-            <div class="d-flex justify-content-between align-items-start">
-              <div>
-                <div class="project-title">
-                  {{ project.title }}
-                </div>
 
-                <div class="project-year">
-                  {{ project.year }}
-                </div>
-              </div>
+      @for(project of otherProjects; track project.id){
 
-              @if (project.badge) {
-                <span [class]="getBadgeClass(project.badge!)">
-                  {{ project.badge }}
-                </span>
-              }
-            </div>
+      <div class="col-lg-6">
 
-            <p class="project-description">
-              {{ project.description }}
-            </p>
+        <div class="card-dark project-card h-100">
+
+          <div class="d-flex justify-content-between align-items-start">
 
             <div>
-              @for (tech of project.techStack; track tech) {
-                <span class="tech-badge">
-                  {{ tech }}
-                </span>
-              }
+
+              <div class="project-title">
+                {{ project.title }}
+              </div>
+
+              <div class="project-year">
+                {{ project.year }}
+              </div>
+
             </div>
 
-            <ul class="project-highlights">
-              @for (point of project.highlights; track point) {
-                <li>
-                  {{ point }}
-                </li>
-              }
-            </ul>
+            @if(project.badge){
 
-            <div class="project-link">
-              <a [href]="project.githubUrl" target="_blank" class="btn-outline">
-                <i class="fab fa-github"></i>
-                GitHub
-              </a>
-            </div>
+            <span [class]="getBadgeClass(project.badge)">
+              {{ project.badge }}
+            </span>
+
+            }
+
           </div>
+
+          <p class="project-description">
+            {{ project.description }}
+          </p>
+
+          <div>
+
+            @for(tech of project.techStack; track tech){
+
+            <span class="tech-badge">
+              {{ tech }}
+            </span>
+
+            }
+
+          </div>
+
+          <ul class="project-highlights">
+
+            @for(point of project.highlights; track point){
+
+            <li>
+              {{ point }}
+            </li>
+
+            }
+
+          </ul>
+
+          <div class="project-link">
+
+            <a
+              [href]="project.githubUrl"
+              target="_blank"
+              class="btn-outline">
+
+              <i class="fab fa-github"></i>
+              GitHub
+
+            </a>
+
+          </div>
+
         </div>
+
+      </div>
+
       }
+
     </div>
+
   </div>
+
 </section>

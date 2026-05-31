@@ -77,3 +77,43 @@
     border-color:var(--accent);
     color:var(--accent);
 }
+
+/*Featured*/
+
+.featured-project{
+    padding:40px;
+    margin-bottom:50px;
+    border:1px solid rgba(77,157,224,.25);
+}
+
+.featured-label{
+    color:var(--teal);
+    font-size:.85rem;
+    letter-spacing:2px;
+    margin-bottom:10px;
+    text-transform:uppercase;
+}
+
+.featured-title{
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+.featured-description{
+    margin:20px 0;
+    color:var(--text-secondary);
+    max-width:900px;
+}
+
+.featured-tech{
+    margin:20px 0;
+}
+
+.featured-actions{
+    margin-top:25px;
+}
+
+.other-projects-title{
+    margin-bottom:25px;
+    font-weight:700;
+}

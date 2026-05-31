@@ -28,4 +28,8 @@ export class Projects {
         return 'badge-pill badge-fullstack';
     }
   }
+
+  featuredProject = PROJECTS.find((p) => p.featured);
+
+  otherProjects = PROJECTS.filter((p) => !p.featured);
 }

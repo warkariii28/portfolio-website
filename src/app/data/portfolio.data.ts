@@ -96,7 +96,8 @@ export interface Project {
   githubUrl: string;
   liveUrl?: string;
   highlights: string[];
-  badge?: string; // e.g. 'Published', 'Full-Stack', 'Research'
+  badge?: string; // e.g. 'Published', 'Full-Stack', 'Research';
+  featured:boolean;
 }
 
 export const PROJECTS: Project[] = [
@@ -115,6 +116,7 @@ export const PROJECTS: Project[] = [
       'Layered backend: controllers → services → repositories',
     ],
     badge: 'Full-Stack',
+    featured:false,
   },
   {
     id: 2,
@@ -141,6 +143,7 @@ export const PROJECTS: Project[] = [
       'PostgreSQL-backed result logging with feedback system',
     ],
     badge: 'Published Research',
+    featured:true,
   },
   {
     id: 3,
@@ -157,6 +160,7 @@ export const PROJECTS: Project[] = [
       'Fully responsive across devices',
     ],
     badge: 'Frontend',
+    featured:false,
   },
   {
     id: 4,
@@ -173,6 +177,7 @@ export const PROJECTS: Project[] = [
       'Server-side validation and input sanitisation',
     ],
     badge: 'Backend',
+    featured:false,
   }
 ];
 
