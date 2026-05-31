@@ -1,0 +1,62 @@
+<section id="projects">
+  <div class="container">
+    <span class="section-eyebrow"> Portfolio </span>
+
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="section-divider"></div>
+
+    <div class="row g-4">
+      @for (project of projects; track project.id) {
+        <div class="col-lg-6">
+          <div class="card-dark project-card h-100">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="project-title">
+                  {{ project.title }}
+                </div>
+
+                <div class="project-year">
+                  {{ project.year }}
+                </div>
+              </div>
+
+              @if (project.badge) {
+                <span [class]="getBadgeClass(project.badge!)">
+                  {{ project.badge }}
+                </span>
+              }
+            </div>
+
+            <p class="project-description">
+              {{ project.description }}
+            </p>
+
+            <div>
+              @for (tech of project.techStack; track tech) {
+                <span class="tech-badge">
+                  {{ tech }}
+                </span>
+              }
+            </div>
+
+            <ul class="project-highlights">
+              @for (point of project.highlights; track point) {
+                <li>
+                  {{ point }}
+                </li>
+              }
+            </ul>
+
+            <div class="project-link">
+              <a [href]="project.githubUrl" target="_blank" class="btn-outline">
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

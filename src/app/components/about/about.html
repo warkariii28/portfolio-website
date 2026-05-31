@@ -1,0 +1,61 @@
+<section id="about">
+  <div class="container">
+
+    <span class="section-eyebrow">
+      About Me
+    </span>
+
+    <h2 class="section-title">
+      Building Software With Purpose
+    </h2>
+
+    <div class="section-divider"></div>
+
+    <div class="row g-4 align-items-stretch">
+
+      <div class="col-lg-8">
+
+        <div class="card-dark about-main p-4 h-100">
+
+          <p class="about-text">
+            {{ about.bio }}
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-4">
+
+        <div class="card-dark p-4 h-100">
+
+          <h5 class="highlight-title">
+            Key Highlights
+          </h5>
+
+          <div class="highlight-list">
+
+            @for(item of about.highlights; track item){
+
+              <div class="highlight-item">
+
+                <i class="fas fa-check-circle"></i>
+
+                <span>
+                  {{ item }}
+                </span>
+
+              </div>
+
+            }
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

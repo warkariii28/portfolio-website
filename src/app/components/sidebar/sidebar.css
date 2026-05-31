@@ -1,0 +1,84 @@
+:host{
+    display:block;
+}
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:280px;
+    height:100vh;
+
+    background:var(--bg-card);
+
+    border-right:1px solid var(--border);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:30px;
+    z-index:1000;
+}
+
+.sidebar-photo{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    object-fit:cover;
+
+    border:2px solid var(--accent);
+
+    margin-bottom:20px;
+}
+
+.sidebar-name{
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.sidebar-role{
+    color:var(--text-secondary);
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.sidebar-socials{
+    display:flex;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.sidebar-socials a{
+    font-size:1.4rem;
+    color:var(--text-secondary);
+    transition:.3s;
+}
+
+.sidebar-socials a:hover{
+    color:var(--accent);
+}
+
+.resume-btn{
+    padding:10px 20px;
+    border:1px solid var(--accent);
+    border-radius:8px;
+    color:var(--accent);
+    text-decoration:none;
+}
+
+.resume-btn:hover{
+    background:var(--accent);
+    color:white;
+}
+
+@media (max-width: 992px){
+
+    .sidebar{
+        display:none !important;
+    }
+    :host{
+        display:none;
+    }
+
+}

@@ -1,0 +1,41 @@
+<section id="skills">
+  <div class="container">
+
+    <span class="section-eyebrow">
+      Skills
+    </span>
+
+    <h2 class="section-title">
+      Technologies & Tools
+    </h2>
+
+    <div class="section-divider"></div>
+
+    <div class="row g-4">
+
+      @for(skill of skills; track skill.category){
+
+      <div class="col-md-6 col-lg-4">
+
+        <div class="card-dark p-4 h-100">
+
+          <h5 class="mb-3">
+            {{ skill.category }}
+          </h5>
+
+          @for(item of skill.items; track item){
+            <span class="tech-badge">
+              {{ item }}
+            </span>
+          }
+
+        </div>
+
+      </div>
+
+      }
+
+    </div>
+
+  </div>
+</section>

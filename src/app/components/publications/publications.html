@@ -1,0 +1,47 @@
+<section id="publications">
+  <div class="container">
+
+    <span class="section-eyebrow">
+      Research
+    </span>
+
+    <h2 class="section-title">
+      Publications
+    </h2>
+
+    <div class="section-divider"></div>
+
+    @for(publication of publications; track publication.title){
+
+    <div class="card-dark p-4">
+
+      <div class="d-flex justify-content-between flex-wrap mb-3">
+
+        <h4>
+          {{ publication.title }}
+        </h4>
+
+        <span class="badge-pill badge-published">
+          Published
+        </span>
+
+      </div>
+
+      <h6 class="text-secondary">
+        {{ publication.conference }}
+      </h6>
+
+      <p class="text-secondary">
+        {{ publication.publisher }} • {{ publication.year }}
+      </p>
+
+      <p>
+        {{ publication.description }}
+      </p>
+
+    </div>
+
+    }
+
+  </div>
+</section>

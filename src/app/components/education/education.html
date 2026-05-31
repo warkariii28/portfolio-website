@@ -1,0 +1,47 @@
+<section id="education">
+  <div class="container">
+
+    <span class="section-eyebrow">
+      Education
+    </span>
+
+    <h2 class="section-title">
+      Academic Background
+    </h2>
+
+    <div class="section-divider"></div>
+
+    <div class="row g-4">
+
+      @for(item of education; track item.degree){
+
+      <div class="col-lg-4">
+
+        <div class="card-dark p-4 h-100">
+
+          <h5>
+            {{ item.degree }}
+          </h5>
+
+          <p class="text-secondary mb-2">
+            {{ item.institution }}
+          </p>
+
+          <p class="mb-2">
+            {{ item.score }}
+          </p>
+
+          <small class="text-secondary">
+            {{ item.year }}
+          </small>
+
+        </div>
+
+      </div>
+
+      }
+
+    </div>
+
+  </div>
+</section>
