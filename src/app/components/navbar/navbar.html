@@ -13,14 +13,14 @@
 
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-        <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about" [class.active-nav]="activeSection === 'about'">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills" [class.active-nav]="activeSection === 'skills'">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects" [class.active-nav]="activeSection === 'projects'">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience" [class.active-nav]="activeSection === 'experience'">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#publications" [class.active-nav]="activeSection === 'publications'">Publications</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education" [class.active-nav]="activeSection === 'education'">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#achievements" [class.active-nav]="activeSection === 'achievements'">Achievements</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" [class.active-nav]="activeSection === 'contact'" >Contact</a></li>
         <a href="assets/cv/Atharv_CV.pdf" target="_blank" class="btn-accent ms-lg-3"> Resume </a>
       </ul>
     </div>

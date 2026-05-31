@@ -12,6 +12,9 @@ import { Education } from './components/education/education';
 import { Achievements } from './components/achievements/achievements';
 import { Contact } from './components/contact/contact';
 import { Footer } from './components/footer/footer';
+import { AfterViewInit } from '@angular/core';
+import { PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -27,10 +30,34 @@ import { Footer } from './components/footer/footer';
     Education,
     Achievements,
     Contact,
-    Footer
+    Footer,
   ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
+export class App implements AfterViewInit {
+  private platformId = inject(PLATFORM_ID);
+
+  ngAfterViewInit(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      },
+    );
+
+    reveals.forEach((item) => observer.observe(item));
+  }
 }
