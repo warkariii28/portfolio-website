@@ -24,3 +24,35 @@
     margin:0;
     color:var(--text-secondary);
 }
+
+/* Contact form */
+.contact-form-wrapper{
+    margin-top:50px;
+    padding:30px;
+}
+
+.form-title{
+    margin-bottom:25px;
+}
+
+.form-control{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    color:var(--text-primary);
+}
+
+.form-control::placeholder{
+    color: rgba(255,255,255,.65);
+    opacity: 1;
+}
+
+.form-control:focus{
+    box-shadow:none;
+    border-color:var(--accent);
+    background:var(--bg-card);
+    color:var(--text-primary);
+}
+
+textarea{
+    resize:none;
+}
