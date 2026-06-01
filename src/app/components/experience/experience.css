@@ -67,3 +67,53 @@
     margin-bottom:12px;
     color:var(--text-secondary);
 }
+
+.timeline{
+    position:relative;
+    margin-top:40px;
+}
+
+.timeline::before{
+    content:'';
+    position:absolute;
+
+    left:15px;
+    top:0;
+    bottom:0;
+
+    width:2px;
+
+    background:var(--border);
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:60px;
+    margin-bottom:40px;
+}
+
+.timeline-dot{
+    position:absolute;
+
+    left:7px;
+    top:50px;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+    border:3px solid var(--bg-primary);
+
+    z-index:2;
+}
+
+.timeline-content{
+    padding:30px;
+}
+
+.timeline-content:hover .timeline-dot{
+    transform:scale(1.1);
+}

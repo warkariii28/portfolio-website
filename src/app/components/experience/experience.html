@@ -1,65 +1,48 @@
 <section id="experience" class="reveal">
-
   <div class="container">
+    <span class="section-eyebrow"> Experience </span>
 
-    <span class="section-eyebrow">
-      Experience
-    </span>
-
-    <h2 class="section-title">
-      Professional Journey
-    </h2>
+    <h2 class="section-title">Professional Journey</h2>
 
     <div class="section-divider"></div>
 
-    <div class="experience-timeline">
+    <div class="timeline">
+      @for (job of experience; track job.company) {
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <!-- <div class="year-badge">2026</div> -->
 
-      @for(job of experience; track job.company){
+          <div class="timeline-content card-dark">
+            <div class="experience-header">
+              <div>
+                <h4 class="role-title">
+                  {{ job.role }}
+                </h4>
 
-      <div class="experience-card card-dark">
+                <div class="company-name">
+                  {{ job.company }}
+                </div>
+              </div>
 
-        <div class="experience-header">
-
-          <div>
-
-            <h4 class="role-title">
-              {{ job.role }}
-            </h4>
-
-            <div class="company-name">
-              {{ job.company }}
+              <div class="duration">
+                {{ job.duration }}
+              </div>
             </div>
 
+            <div class="experience-type">
+              {{ job.type }}
+            </div>
+
+            <ul class="experience-points">
+              @for (point of job.points; track point) {
+                <li>
+                  {{ point }}
+                </li>
+              }
+            </ul>
           </div>
-
-          <div class="duration">
-            {{ job.duration }}
-          </div>
-
         </div>
-
-        <div class="experience-type">
-          {{ job.type }}
-        </div>
-
-        <ul class="experience-points">
-
-          @for(point of job.points; track point){
-
-          <li>
-            {{ point }}
-          </li>
-
-          }
-
-        </ul>
-
-      </div>
-
       }
-
     </div>
-
   </div>
-
 </section>
