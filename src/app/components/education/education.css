@@ -1,0 +1,69 @@
+.education-card {
+  min-height: 220px;
+  position: relative;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 92px;
+  height: 92px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  opacity: 0.55;
+}
+
+.education-card-bg::after {
+  content: '';
+  position: absolute;
+  right: 34px;
+  top: 34px;
+  color: var(--accent);
+  font-family: serif;
+  font-size: 3.4rem;
+  line-height: 1;
+  opacity: 0.13;
+  transform: rotate(-8deg);
+}
+
+.education-card-bg.be-bg::after {
+  content: '📚';
+  font-family: var(--font-display);
+}
+
+.education-card-bg.hsc-bg::after {
+  content: '☼';
+  font-family: var(--font-display);
+}
+
+.education-card-bg.ssc-bg::after {
+  content: 'पु';
+  font-family: serif;
+}
+
+.education-icon {
+  align-items: center;
+  background:
+    linear-gradient(135deg, var(--gold-dim), var(--teal-dim)),
+    var(--bg-card-elevated);
+  border: 1px solid var(--border-hover);
+  border-radius: 16px;
+  color: var(--accent);
+  display: inline-flex;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 800;
+  height: 48px;
+  justify-content: center;
+  margin-bottom: 18px;
+  width: 58px;
+}
+
+.education-card h5,
+.education-card p,
+.education-card small {
+  position: relative;
+  z-index: 1;
+}

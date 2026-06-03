@@ -11,19 +11,110 @@
 
     <div class="section-divider"></div>
 
-    <div class="card-dark p-4">
+    <div class="achievements-grid">
 
-      <ul class="mb-0">
+      <div class="recognition-panel card-dark p-4">
 
-        @for(item of achievements; track item){
+        <h4 class="recognition-title">
+          Recognition
+        </h4>
 
-        <li class="mb-3">
-          {{ item }}
-        </li>
+        <div class="achievement-card-grid">
 
-        }
+          @for(item of achievementCards; track item.title){
 
-      </ul>
+          <article class="achievement-card">
+            <div class="achievement-icon" [class.sanskrit-icon]="item.iconType === 'sanskrit'">
+              {{ item.icon }}
+            </div>
+
+            <div>
+              <span class="achievement-tag">
+                {{ item.tag }}
+              </span>
+
+              <h5>
+                {{ item.title }}
+              </h5>
+
+              <p>
+                {{ item.description }}
+              </p>
+            </div>
+          </article>
+
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="credentials-grid">
+
+      <div class="certifications-panel card-dark p-4">
+
+        <h4 class="recognition-title">
+          Certifications
+        </h4>
+
+        <div class="certification-list">
+
+          @for(certification of certifications; track certification.name){
+
+          <div class="certification-item">
+
+            <div>
+              <h5>
+                {{ certification.name }}
+              </h5>
+
+              <p>
+                {{ certification.issuer }}
+              </p>
+            </div>
+
+            <span
+              class="certification-status"
+              [class.in-progress]="certification.status === 'In Progress'">
+              {{ certification.status }}
+            </span>
+
+          </div>
+
+          }
+
+        </div>
+
+      </div>
+
+      <div class="interests-strip card-dark">
+
+        <span class="interests-label">
+          Interests
+        </span>
+
+        <div class="interests-list">
+
+          @for(interest of interests; track interest.label){
+
+          <a
+            class="interest-card"
+            [href]="interest.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [title]="interest.description"
+            [attr.data-tooltip]="interest.description">
+            <span class="interest-icon">{{ interest.icon }}</span>
+            <span>{{ interest.label }}</span>
+          </a>
+
+          }
+
+        </div>
+
+      </div>
 
     </div>
 

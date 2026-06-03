@@ -50,6 +50,30 @@
         {{ featuredProject.description }}
       </p>
 
+      @if(featuredProject.problem){
+
+      <p class="project-meta">
+        <strong>Problem:</strong> {{ featuredProject.problem }}
+      </p>
+
+      }
+
+      @if(featuredProject.role){
+
+      <p class="project-meta">
+        <strong>Role:</strong> {{ featuredProject.role }}
+      </p>
+
+      }
+
+      @if(featuredProject.impact){
+
+      <p class="project-meta">
+        <strong>Impact:</strong> {{ featuredProject.impact }}
+      </p>
+
+      }
+
       <div class="featured-tech">
 
         @for(tech of featuredProject.techStack; track tech){
@@ -77,14 +101,37 @@
       <div class="featured-actions">
 
         <a
+          [routerLink]="['/projects', featuredProject.id]"
+          class="btn-accent">
+
+          View Details
+
+        </a>
+
+        <a
           [href]="featuredProject.githubUrl"
           target="_blank"
+          rel="noopener noreferrer"
           class="btn-outline">
 
           <i class="fab fa-github"></i>
           GitHub
 
         </a>
+
+        @if(featuredProject.liveUrl){
+
+        <a
+          [href]="featuredProject.liveUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-accent">
+
+          Live Demo
+
+        </a>
+
+        }
 
       </div>
 
@@ -134,6 +181,30 @@
             {{ project.description }}
           </p>
 
+          @if(project.problem){
+
+          <p class="project-meta">
+            <strong>Problem:</strong> {{ project.problem }}
+          </p>
+
+          }
+
+          @if(project.role){
+
+          <p class="project-meta">
+            <strong>Role:</strong> {{ project.role }}
+          </p>
+
+          }
+
+          @if(project.impact){
+
+          <p class="project-meta">
+            <strong>Impact:</strong> {{ project.impact }}
+          </p>
+
+          }
+
           <div>
 
             @for(tech of project.techStack; track tech){
@@ -161,14 +232,37 @@
           <div class="project-link">
 
             <a
+              [routerLink]="['/projects', project.id]"
+              class="btn-accent">
+
+              View Details
+
+            </a>
+
+            <a
               [href]="project.githubUrl"
               target="_blank"
+              rel="noopener noreferrer"
               class="btn-outline">
 
               <i class="fab fa-github"></i>
               GitHub
 
             </a>
+
+            @if(project.liveUrl){
+
+            <a
+              [href]="project.liveUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-accent">
+
+              Live Demo
+
+            </a>
+
+            }
 
           </div>
 

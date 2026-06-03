@@ -13,9 +13,9 @@
 
     @for(publication of publications; track publication.title){
 
-    <div class="card-dark p-4">
+    <div class="publication-card card-dark p-4">
 
-      <div class="d-flex justify-content-between flex-wrap mb-3">
+      <div class="publication-header">
 
         <h4>
           {{ publication.title }}
@@ -38,6 +38,12 @@
       <p>
         {{ publication.description }}
       </p>
+
+      <a
+        [routerLink]="['/publications', publication.id]"
+        class="btn-accent publication-detail-link">
+        Read Details
+      </a>
 
     </div>
 

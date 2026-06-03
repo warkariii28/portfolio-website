@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { ACHIEVEMENTS } from '../../data/portfolio.data';
+import {
+  ACHIEVEMENT_CARDS,
+  ACHIEVEMENTS,
+  CERTIFICATIONS,
+  INTERESTS,
+} from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-achievements',
@@ -9,4 +14,7 @@ import { ACHIEVEMENTS } from '../../data/portfolio.data';
 })
 export class Achievements {
   achievements = ACHIEVEMENTS;
+  achievementCards = ACHIEVEMENT_CARDS;
+  certifications = CERTIFICATIONS;
+  interests = INTERESTS;
 }

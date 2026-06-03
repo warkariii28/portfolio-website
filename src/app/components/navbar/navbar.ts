@@ -1,28 +1,37 @@
 import { Component } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { ThemeService } from '../../services/theme';
+import { HERO, NAV_LINKS } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar {
   activeSection = 'hero';
+  hero = HERO;
+  navLinks = NAV_LINKS;
+
+  constructor(public themeService: ThemeService) {}
+
+  getSectionId(anchor: string): string {
+    return anchor.replace('#', '');
+  }
+
+  closeMenu() {
+    const menu = document.getElementById('navMenu');
+    const toggle = document.querySelector<HTMLButtonElement>('.navbar-toggler');
+
+    menu?.classList.remove('show');
+    toggle?.setAttribute('aria-expanded', 'false');
+  }
 
   @HostListener('window:scroll', [])
   onScroll() {
-    const sections = [
-      'hero',
-      'about',
-      'skills',
-      'projects',
-      'experience',
-      'publications',
-      'education',
-      'achievements',
-      'contact',
-    ];
+    const sections = ['hero', ...this.navLinks.map((link) => this.getSectionId(link.anchor))];
 
     for (const sectionId of sections) {
       const section = document.getElementById(sectionId);

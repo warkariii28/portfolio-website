@@ -1,6 +1,6 @@
 .content-area{
     flex:1;
-    margin-left:280px;
+    margin-left:var(--sidebar-width);
 }
 
 @media (max-width:992px){

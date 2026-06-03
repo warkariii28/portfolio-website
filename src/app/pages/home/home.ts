@@ -1,0 +1,30 @@
+import { Component } from '@angular/core';
+
+import { Hero } from '../../components/hero/hero';
+import { About } from '../../components/about/about';
+import { Skills } from '../../components/skills/skills';
+import { Projects } from '../../components/projects/projects';
+import { Experience } from '../../components/experience/experience';
+import { Publications } from '../../components/publications/publications';
+import { Education } from '../../components/education/education';
+import { Achievements } from '../../components/achievements/achievements';
+import { Contact } from '../../components/contact/contact';
+import { Footer } from '../../components/footer/footer';
+
+@Component({
+  selector: 'app-home',
+  imports: [
+    Hero,
+    About,
+    Skills,
+    Projects,
+    Experience,
+    Publications,
+    Education,
+    Achievements,
+    Contact,
+    Footer,
+  ],
+  templateUrl: './home.html',
+})
+export class Home {}

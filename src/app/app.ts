@@ -2,16 +2,7 @@ import { Component } from '@angular/core';
 
 import { Navbar } from './components/navbar/navbar';
 import { Sidebar } from './components/sidebar/sidebar';
-import { Hero } from './components/hero/hero';
-import { About } from './components/about/about';
-import { Skills } from './components/skills/skills';
-import { Projects } from './components/projects/projects';
-import { Experience } from './components/experience/experience';
-import { Publications } from './components/publications/publications';
-import { Education } from './components/education/education';
-import { Achievements } from './components/achievements/achievements';
-import { Contact } from './components/contact/contact';
-import { Footer } from './components/footer/footer';
+import { RouterOutlet } from '@angular/router';
 import { AfterViewInit } from '@angular/core';
 import { PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -21,16 +12,7 @@ import { isPlatformBrowser } from '@angular/common';
   imports: [
     Navbar,
     Sidebar,
-    Hero,
-    About,
-    Skills,
-    Projects,
-    Experience,
-    Publications,
-    Education,
-    Achievements,
-    Contact,
-    Footer,
+    RouterOutlet,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

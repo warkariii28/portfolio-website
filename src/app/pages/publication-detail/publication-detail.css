@@ -1,0 +1,49 @@
+@import '../project-detail/project-detail.css';
+
+.paper-layout {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(320px, 0.75fr) minmax(520px, 1.25fr);
+  margin-top: 34px;
+}
+
+.paper-viewer {
+  padding: 16px;
+  min-width: 0;
+}
+
+.paper-viewer-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.paper-viewer-header span {
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.paper-viewer-header small {
+  color: var(--text-muted);
+}
+
+.paper-frame {
+  background: #ffffff;
+  border: 0;
+  border-radius: 12px;
+  display: block;
+  height: min(78vh, 780px);
+  min-height: 620px;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .paper-layout {
+    grid-template-columns: 1fr;
+  }
+}

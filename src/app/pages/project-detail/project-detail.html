@@ -1,0 +1,119 @@
+<section class="detail-page">
+  <div class="container">
+    <a routerLink="/" fragment="projects" class="detail-back">Back to projects</a>
+
+    @if(project){
+
+    <article class="detail-shell">
+      <div class="detail-kicker">
+        {{ project.badge }} / {{ project.year }}
+      </div>
+
+      <h1>
+        {{ project.title }}
+      </h1>
+
+      <p class="detail-lede">
+        {{ project.description }}
+      </p>
+
+      <div class="detail-hero-grid">
+        <div class="detail-summary card-dark">
+          <h2>Project Brief</h2>
+          <p>{{ project.context }}</p>
+        </div>
+
+        <div class="detail-panel card-dark">
+          <span>Problem</span>
+          <p>{{ project.problem }}</p>
+        </div>
+
+        <div class="detail-panel card-dark">
+          <span>Role</span>
+          <p>{{ project.role }}</p>
+        </div>
+
+        <div class="detail-panel card-dark">
+          <span>Impact</span>
+          <p>{{ project.impact }}</p>
+        </div>
+      </div>
+
+      <div class="detail-section card-dark">
+        <h2>Technology Stack</h2>
+        <div class="detail-tech">
+          @for(tech of project.techStack; track tech){
+          <span class="tech-badge">{{ tech }}</span>
+          }
+        </div>
+      </div>
+
+      <div class="detail-columns">
+        <div class="detail-section card-dark">
+          <h2>How It Works</h2>
+          <ol class="detail-list ordered">
+            @for(step of project.workflow; track step){
+            <li>{{ step }}</li>
+            }
+          </ol>
+        </div>
+
+        <div class="detail-section card-dark">
+          <h2>My Responsibilities</h2>
+          <ul class="detail-list">
+            @for(point of project.responsibilities; track point){
+            <li>{{ point }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail-section card-dark">
+        <h2>Engineering Proof Points</h2>
+        <ul class="detail-list">
+          @for(point of project.highlights; track point){
+          <li>{{ point }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="detail-section card-dark">
+        <h2>Outcome</h2>
+        <ul class="detail-list">
+          @for(point of project.outcomes; track point){
+          <li>{{ point }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="detail-actions">
+        <a
+          [href]="project.githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-accent">
+          Open GitHub
+        </a>
+
+        @if(project.liveUrl){
+        <a
+          [href]="project.liveUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-outline">
+          Live Demo
+        </a>
+        }
+      </div>
+    </article>
+
+    } @else {
+
+    <div class="detail-shell card-dark">
+      <h1>Project not found</h1>
+      <p class="detail-lede">This project detail page does not exist.</p>
+    </div>
+
+    }
+  </div>
+</section>

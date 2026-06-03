@@ -17,7 +17,23 @@
 
       <div class="col-lg-4">
 
-        <div class="card-dark p-4 h-100">
+        <div class="education-card card-dark p-4 h-100">
+          <div
+            class="education-card-bg"
+            [class.be-bg]="item.degree.includes('BE')"
+            [class.hsc-bg]="item.degree.includes('HSC')"
+            [class.ssc-bg]="item.degree.includes('SSC')">
+          </div>
+
+          <div class="education-icon" aria-hidden="true">
+            @if(item.degree.includes('BE')){
+              BE
+            } @else if(item.degree.includes('HSC')){
+              HSC
+            } @else {
+              SSC
+            }
+          </div>
 
           <h5>
             {{ item.degree }}

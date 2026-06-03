@@ -17,9 +17,37 @@
 
         <div class="card-dark about-main p-4 h-100">
 
-          <p class="about-text">
-            {{ about.bio }}
-          </p>
+          <div class="about-copy">
+
+            <p class="about-text">
+              {{ about.bio }}
+            </p>
+
+          </div>
+
+          <div class="about-visual" aria-hidden="true">
+
+            <div class="orbit-card main-orbit">
+              <span>Core</span>
+              <strong>Full-Stack</strong>
+            </div>
+
+            <div class="orbit-ring"></div>
+
+            <div class="focus-grid">
+
+              @for(area of about.focusAreas; track area.label){
+
+              <div class="focus-chip">
+                <span>{{ area.label }}</span>
+                <strong>{{ area.value }}</strong>
+              </div>
+
+              }
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -39,7 +67,7 @@
 
               <div class="highlight-item">
 
-                <i class="fas fa-check-circle"></i>
+                <span class="highlight-check">✓</span>
 
                 <span>
                   {{ item }}

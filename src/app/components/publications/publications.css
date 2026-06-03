@@ -1,0 +1,26 @@
+.publication-card {
+  position: relative;
+}
+
+.publication-header {
+  align-items: flex-start;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.publication-header h4 {
+  line-height: 1.25;
+  margin: 0;
+  max-width: min(900px, 100%);
+}
+
+.publication-header .badge-pill {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.publication-detail-link {
+  margin-top: 12px;
+}

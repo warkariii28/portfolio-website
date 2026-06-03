@@ -1,0 +1,89 @@
+<section class="detail-page">
+  <div class="container">
+    <a routerLink="/" fragment="publications" class="detail-back">Back to publications</a>
+
+    @if(publication){
+
+    <article class="detail-shell">
+      <div class="detail-kicker">
+        {{ publication.publisher }} / {{ publication.year }}
+      </div>
+
+      <h1>
+        {{ publication.title }}
+      </h1>
+
+      <p class="detail-lede">
+        {{ publication.description }}
+      </p>
+
+      <div class="paper-layout">
+        <div class="paper-info">
+          <div class="detail-panel card-dark">
+            <span>Research Problem</span>
+            <p>{{ publication.problem }}</p>
+          </div>
+
+          <div class="detail-section card-dark">
+            <h2>Approach</h2>
+
+            <ul class="detail-list">
+              @for(point of publication.approach; track point){
+              <li>{{ point }}</li>
+              }
+            </ul>
+          </div>
+
+          <div class="detail-section card-dark">
+            <h2>Outcome</h2>
+            <p class="detail-lede">{{ publication.outcome }}</p>
+          </div>
+
+          <div class="detail-actions">
+            <a
+              [href]="publication.articleUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-accent">
+              Open Article
+            </a>
+
+            <a
+              [href]="publication.pdfUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-outline">
+              Open PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="paper-viewer card-dark">
+          <div class="paper-viewer-header">
+            <span>Published Paper PDF</span>
+            <small>DOI: {{ publication.doi }}</small>
+          </div>
+
+          @if(safePdfUrl){
+
+          <iframe
+            [src]="safePdfUrl"
+            title="TrueVision published paper PDF"
+            class="paper-frame">
+          </iframe>
+
+          }
+        </div>
+      </div>
+    </article>
+
+    } @else {
+
+    <div class="detail-shell card-dark">
+      <h1>Publication not found</h1>
+      <p class="detail-lede">This publication detail page does not exist.</p>
+    </div>
+
+    }
+  </div>
+</section>

@@ -2,6 +2,7 @@
     position:relative;
     padding:35px;
     overflow:hidden;
+    min-height:100%;
 }
 
 .project-card::before{
@@ -9,11 +10,12 @@
     position:absolute;
     top:0;
     left:0;
-    width:4px;
+    width:5px;
     height:100%;
     background:linear-gradient(
         180deg,
         var(--accent),
+        var(--gold),
         var(--teal)
     );
 }
@@ -22,6 +24,7 @@
     font-size:1.6rem;
     font-weight:700;
     margin-bottom:.3rem;
+    color:var(--text-primary);
 }
 
 .project-year{
@@ -34,6 +37,20 @@
     color:var(--text-secondary);
 }
 
+.project-meta{
+    background:color-mix(in srgb, var(--bg-surface) 74%, transparent);
+    border:1px solid var(--border);
+    border-radius:12px;
+    color:var(--text-secondary);
+    margin:10px 0;
+    padding:10px 12px;
+}
+
+.project-meta strong{
+    color:var(--text-primary);
+    font-weight:600;
+}
+
 .project-highlights{
     margin:20px 0;
 }
@@ -41,10 +58,26 @@
 .project-highlights li{
     margin-bottom:10px;
     color:var(--text-secondary);
+    padding-left:18px;
+    position:relative;
+}
+
+.project-highlights li::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:.7em;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--gold);
 }
 
 .project-link{
     margin-top:20px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
 }
 
 .project-link a{
@@ -81,13 +114,17 @@
 /*Featured*/
 
 .featured-project{
-    padding:40px;
+    padding:42px;
     margin-bottom:50px;
-    border:1px solid rgba(77,157,224,.25);
+    border:1px solid var(--border-hover);
+    background:
+        linear-gradient(135deg, rgba(255,138,91,.12), transparent 38%),
+        linear-gradient(315deg, rgba(45,212,191,.1), transparent 45%),
+        var(--bg-card);
 }
 
 .featured-label{
-    color:var(--teal);
+    color:var(--gold);
     font-size:.85rem;
     letter-spacing:2px;
     margin-bottom:10px;
@@ -97,6 +134,7 @@
 .featured-title{
     font-size:2rem;
     margin-bottom:15px;
+    color:var(--text-primary);
 }
 
 .featured-description{
@@ -111,6 +149,9 @@
 
 .featured-actions{
     margin-top:25px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
 }
 
 .other-projects-title{

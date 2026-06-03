@@ -1,0 +1,157 @@
+.detail-page {
+  min-height: 100vh;
+  padding-top: 140px;
+}
+
+.detail-back {
+  color: var(--accent);
+  display: inline-flex;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.detail-shell {
+  padding: clamp(20px, 4vw, 40px) 0;
+}
+
+.detail-kicker {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.detail-shell h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+
+.detail-lede {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 900px;
+}
+
+.detail-hero-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1.2fr repeat(3, 0.8fr);
+  margin: 34px 0;
+}
+
+.detail-summary {
+  padding: 24px;
+}
+
+.detail-summary h2 {
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.detail-summary p {
+  color: var(--text-secondary);
+  margin: 12px 0 0;
+}
+
+.detail-panel {
+  padding: 20px;
+}
+
+.detail-panel span,
+.detail-section h2 {
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.detail-panel p {
+  color: var(--text-secondary);
+  margin: 10px 0 0;
+}
+
+.detail-section {
+  margin-top: 22px;
+  padding: 24px;
+}
+
+.detail-columns {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.detail-tech {
+  margin-top: 14px;
+}
+
+.detail-list {
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.detail-list li {
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.detail-list.ordered {
+  counter-reset: detail-step;
+}
+
+.detail-list.ordered li {
+  counter-increment: detail-step;
+  padding-left: 34px;
+}
+
+.detail-list.ordered li::before {
+  align-items: center;
+  background: var(--accent);
+  color: #ffffff;
+  content: counter(detail-step);
+  display: inline-flex;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  height: 22px;
+  justify-content: center;
+  top: 0.2em;
+  width: 22px;
+}
+
+.detail-list li::before {
+  background: var(--accent);
+  border-radius: 50%;
+  content: '';
+  height: 7px;
+  left: 0;
+  position: absolute;
+  top: 0.72em;
+  width: 7px;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+@media (max-width: 992px) {
+  .detail-hero-grid,
+  .detail-columns {
+    grid-template-columns: 1fr;
+  }
+}

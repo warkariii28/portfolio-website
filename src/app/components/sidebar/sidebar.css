@@ -8,7 +8,9 @@
     width:280px;
     height:100vh;
 
-    background:var(--bg-card);
+    background:
+        linear-gradient(180deg, rgba(255,138,91,.08), transparent 32%),
+        var(--bg-card);
 
     border-right:1px solid var(--border);
 
@@ -28,6 +30,7 @@
     object-fit:cover;
 
     border:2px solid var(--accent);
+    box-shadow:0 18px 42px var(--accent-glow);
 
     margin-bottom:20px;
 }
@@ -49,27 +52,61 @@
     margin-bottom:25px;
 }
 
-.sidebar-socials a{
-    font-size:1.4rem;
+.sidebar-socials .social-link{
+    align-items:center;
+    border:1px solid var(--border);
+    border-radius:12px;
+    display:inline-flex;
+    font-size:1.15rem;
+    height:42px;
+    justify-content:center;
     color:var(--text-secondary);
+    position:relative;
     transition:.3s;
+    width:42px;
 }
 
-.sidebar-socials a:hover{
+.social-svg{
+    fill:currentColor;
+    height:19px;
+    width:19px;
+}
+
+.sidebar-socials .social-link:hover{
     color:var(--accent);
+    border-color:var(--border-hover);
+    box-shadow:0 12px 28px var(--accent-glow);
+    transform:translateY(-3px);
+}
+
+.sidebar-socials .github-link:hover{
+    background:#111827;
+    color:#f8fafc;
+}
+
+.sidebar-socials .linkedin-link:hover{
+    background:#0a66c2;
+    color:#ffffff;
+}
+
+.sidebar-socials .email-link:hover{
+    background:#b94708;
+    color:#ffffff;
 }
 
 .resume-btn{
     padding:10px 20px;
-    border:1px solid var(--accent);
-    border-radius:8px;
-    color:var(--accent);
+    border:1px solid var(--border-hover);
+    border-radius:10px;
+    color:#111827;
+    background:linear-gradient(135deg, #a83d07, #b45309);
     text-decoration:none;
+    font-weight:700;
 }
 
 .resume-btn:hover{
-    background:var(--accent);
-    color:white;
+    background:linear-gradient(135deg, #0f766e, #a83d07);
+    color:#ffffff;
 }
 
 @media (max-width: 992px){

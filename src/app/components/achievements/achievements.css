@@ -1,0 +1,208 @@
+.credentials-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 24px;
+}
+
+.recognition-title {
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+}
+
+.achievement-card-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.achievement-card {
+  align-items: flex-start;
+  background:
+    radial-gradient(circle at 16% 20%, var(--accent-dim), transparent 34%),
+    color-mix(in srgb, var(--bg-surface) 78%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 56px 1fr;
+  padding: 16px;
+  transition: var(--transition);
+}
+
+.achievement-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 18px 40px var(--accent-glow);
+  transform: translateY(-4px);
+}
+
+.achievement-icon {
+  align-items: center;
+  background:
+    linear-gradient(135deg, var(--accent-dim), var(--teal-dim)),
+    var(--bg-card);
+  border: 1px solid var(--border-hover);
+  border-radius: 16px;
+  color: var(--accent);
+  display: inline-flex;
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 800;
+  height: 52px;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  width: 52px;
+}
+
+.achievement-icon.sanskrit-icon {
+  font-family: serif;
+  font-size: 1.4rem;
+}
+
+.achievement-tag {
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.achievement-card h5 {
+  font-size: 1rem;
+  margin: 3px 0 5px;
+}
+
+.achievement-card p {
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.certification-list {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.certification-item {
+  background: color-mix(in srgb, var(--bg-surface) 76%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  transition: var(--transition);
+}
+
+.certification-item:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 14px 34px var(--accent-glow);
+  transform: translateY(-3px);
+}
+
+.certification-item h5 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.certification-item p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.certification-status {
+  border: 1px solid rgba(63, 185, 80, 0.2);
+  border-radius: 20px;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  padding: 3px 10px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.certification-status.in-progress {
+  border-color: rgba(240, 136, 62, 0.22);
+  color: var(--orange);
+}
+
+.interests-strip {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+}
+
+.interests-label {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.interests-list {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.interest-card {
+  align-items: flex-start;
+  background:
+    radial-gradient(circle at 85% 18%, rgba(255,255,255,.34), transparent 24%),
+    linear-gradient(135deg, var(--teal-dim), var(--accent-dim)),
+    var(--bg-card-elevated);
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  border-radius: 18px;
+  color: var(--teal);
+  display: grid;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  gap: 16px;
+  letter-spacing: 0.04em;
+  min-height: 120px;
+  overflow: hidden;
+  padding: 16px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.interest-card::before {
+  color: color-mix(in srgb, var(--accent) 20%, transparent);
+  content: attr(data-tooltip);
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  inset: auto -10px 8px 12px;
+  line-height: 1;
+  opacity: 0.16;
+  position: absolute;
+}
+
+.interest-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 14px 32px var(--accent-glow);
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.interest-icon {
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: inline-flex;
+  font-size: 1.25rem;
+  height: 42px;
+  justify-content: center;
+  width: 42px;
+}
+
+@media (max-width: 992px) {
+  .credentials-grid,
+  .achievement-card-grid,
+  .certification-list,
+  .interests-list {
+    grid-template-columns: 1fr;
+  }
+}
